@@ -28,7 +28,7 @@ async function con(){
 con();
 
 app.get('/', async (req, res) =>{
-    res.status(200).send('<h1>It Works!</h1>');
+    res.status(200).send('<h1>Its Work123!</h1>');
 });
 app.get('/email', async (req, res) =>{
     // create our temp table
@@ -37,7 +37,6 @@ app.get('/email', async (req, res) =>{
     await client.query('INSERT INTO users(data) VALUES($1)', [newUser])
     const { rows } = await client.query('SELECT * FROM users')
     console.log(rows)
-
     res.status(200).send('<h1>It Works!</h1>'+req.query.email);
 });
 
